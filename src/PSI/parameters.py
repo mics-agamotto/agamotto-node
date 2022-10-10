@@ -2,12 +2,12 @@ from math import log2
 
 # sizes of databases of server and client
 # size of intersection should be less than size of client's database
-server_size = 2 ** 20
+server_size = 8000 #2 ** 20
 client_size = 4000
 intersection_size = 3500
 
 # seeds used by both the Server and the Client for the Murmur hash functions
-hash_seeds = [123456789, 10111213141516, 17181920212223]
+hash_seeds = [123456789, 987654320, 132435469]
 
 # output_bits = number of bits of output of the hash functions
 # number of bins for simple/Cuckoo Hashing = 2 ** output_bits

@@ -1,4 +1,5 @@
-from agamotto.server import app
+from .example_emails import EXAMPLE_EMAILS
+from .server import app
 
 
 def main():

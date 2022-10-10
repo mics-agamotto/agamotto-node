@@ -3,7 +3,7 @@ import math
 import mmh3
 
 #parameters
-from parameters import output_bits, number_of_hashes
+from .parameters import output_bits, number_of_hashes
 mask_of_power_of_2 = 2 ** output_bits - 1
 log_no_hashes = int(math.log(number_of_hashes) / math.log(2)) + 1
 
@@ -75,6 +75,7 @@ class Cuckoo():
 		current_location = location( self.hash_seed[self.insert_index], item)
 		current_item = self.data_structure[ current_location]
 		self.data_structure[ current_location ] = left_and_index(item, self.insert_index)
+		print(f"Inserting {item} at {current_location} to be {self.data_structure[ current_location ]}")
 
 		if (current_item == None):
 			self.insert_index = randint(0, number_of_hashes - 1)	

@@ -1,6 +1,6 @@
 from math import log2
 import numpy as np
-from parameters import ell, plain_modulus, bin_capacity, alpha
+from .parameters import ell, plain_modulus, bin_capacity, alpha
 
 base = 2 ** ell
 minibin_capacity = int(bin_capacity / alpha)# minibin_capacity = B / alpha

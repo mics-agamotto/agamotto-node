@@ -2,7 +2,7 @@ from fastecdsa.curve import P192
 from fastecdsa.point import Point
 from math import log2
 from multiprocessing import Pool
-from parameters import sigma_max
+from .parameters import sigma_max
 
 mask = 2 ** sigma_max - 1
 

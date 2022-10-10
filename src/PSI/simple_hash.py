@@ -3,7 +3,7 @@ import math
 import mmh3
 
 #parameters
-from parameters import output_bits, number_of_hashes, bin_capacity
+from .parameters import output_bits, number_of_hashes, bin_capacity
 log_no_hashes = int(math.log(number_of_hashes) / math.log(2)) + 1
 mask_of_power_of_2 = 2 ** output_bits - 1
 
