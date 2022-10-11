@@ -44,5 +44,5 @@ def server_perform_psi(server_preprocessed, request):
         vp.ParseFromString(ans)
         answer_cpp.append(base64.b64encode(vp.ciphertexts[0]).decode())
 
-    obj = {"ciphertexts": answer_cpp}
-    return json.dumps(obj)
+    resp = {"ciphertexts": answer_cpp}
+    return resp
