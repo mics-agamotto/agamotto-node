@@ -9,3 +9,4 @@ class PSIServerState:
         print("Preprocessing server set and generating polynomials...")
         PSIServerState.server_preprocessed = server_perform_preprocess(server_set)
         print("Preprocessing complete.")
+        return PSIServerState.server_preprocessed

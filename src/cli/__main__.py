@@ -45,8 +45,8 @@ def main2():
 
 
 def main():
-    # main2()
-    # return
+    main2()
+    return
 
     # hash_and_fhe_encrypt([1, 2, 3, 4, 5])
 
