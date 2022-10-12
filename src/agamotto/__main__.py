@@ -6,10 +6,7 @@ def main():
 
 
 def main_prod():
-    app.run(host="0.0.0.0", port=443, ssl=dict(
-    cert="/certs/server.crt",
-    key="/certs/server.key",
-))
+    app.run(host="0.0.0.0", port=8000, ssl="/certs/")
 
 
 if __name__ == "__main__":

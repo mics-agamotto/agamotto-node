@@ -9,5 +9,5 @@ services:
     ports:
       - "8080:443"
     volumes:
-      - ./server.crt:/certs/server.crt
-      - ./server.key:/certs/server.key
+      - ./server.crt:/certs/fullchain.pem
+      - ./server.key:/certs/privkey.pem
