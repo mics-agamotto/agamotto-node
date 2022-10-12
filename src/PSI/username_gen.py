@@ -1,6 +1,6 @@
 # from random import sample
 from .parameters import server_size, client_size, intersection_size
-import random, string
+import hashlib, random, string
 
 # set elements can be integers < order of the generator of the elliptic curve (192 bits integers if P192 is used); 'sample' works only for a maximum of 63 bits integers.
 
@@ -8,11 +8,21 @@ import random, string
 
 
 def encode_ascii_str(s: str) -> int:
-    return int(bytes(s, "ascii").hex(), 16)
+    digest = hashlib.sha256(s.encode()).digest()
+    print(hashlib.sha256(s.encode()).hexdigest())
+    # We pack the first 28 bits of sha256(s) as the int representation
+    val = ((digest[0] * 256 + digest[1]) * 256 + digest[2]) * 16 + ((digest[3] >> 4) % 16)
+    return val
 
 
 def decode_ascii_str(s: int) -> str:
-    return bytes.fromhex(hex(s)[2:]).decode()
+    digest = (
+        hex((s >> 20) % 256)[2:]
+        + hex((s >> 12) % 256)[2:]
+        + hex((s >> 4) % 256)[2:]
+        + hex(s % 16)[2:]
+    )
+    return digest
 
 
 def preprocess_email(s: str) -> int:
