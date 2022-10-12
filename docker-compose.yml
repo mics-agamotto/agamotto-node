@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  agamotto-node:
+    build:
+      context: .
+    container_name: agamotto-node
+    restart: always
+    ports:
+      - "8080:443"
+    volumes:
+      - ./server.crt:/certs/server.crt
+      - ./server.key:/certs/server.key
