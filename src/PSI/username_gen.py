@@ -9,7 +9,6 @@ import hashlib, random, string
 
 def encode_ascii_str(s: str) -> int:
     digest = hashlib.sha256(s.encode()).digest()
-    print(hashlib.sha256(s.encode()).hexdigest())
     # We pack the first 28 bits of sha256(s) as the int representation
     val = ((digest[0] * 256 + digest[1]) * 256 + digest[2]) * 16 + ((digest[3] >> 4) % 16)
     return val

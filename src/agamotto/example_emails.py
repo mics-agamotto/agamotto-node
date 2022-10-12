@@ -4,7 +4,7 @@ EXAMPLE_EMAILS = [
     "sai@berkeley.edu",
     "carey@berkeley.edu",
     "guangkuo@berkeley.edu",
-    "sehkar@berkeley.edu",
+    "sekhar@berkeley.edu",
     "ryan@berkeley.edu",
     "stern@optonline.net",
     "msusa@att.net",
