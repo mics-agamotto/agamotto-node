@@ -1,4 +1,11 @@
 EXAMPLE_EMAILS = [
+    "thor@berkeley.edu",
+    "steven@berkeley.edu",
+    "sai@berkeley.edu",
+    "carey@berkeley.edu",
+    "guangkuo@berkeley.edu",
+    "sekhar@berkeley.edu",
+    "ryan@berkeley.edu",
     "stern@optonline.net",
     "msusa@att.net",
     "jhardin@verizon.net",
