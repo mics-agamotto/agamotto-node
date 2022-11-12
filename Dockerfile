@@ -5,4 +5,4 @@ WORKDIR /agamotto-node
 RUN pip install .
 RUN tar xvzf dist.tar.gz dist
 
-ENTRYPOINT [ "agamotto-node" ]
+ENTRYPOINT [ "agamotto-node-prod" ]
