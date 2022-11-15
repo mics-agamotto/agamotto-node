@@ -7,7 +7,7 @@ from PSI.server import server_perform_preprocess, server_perform_psi
 from PSI.username_gen import preprocess_email
 
 app = Sanic("agamotto-node")
-app.static('/', './dist')
+
 
 async def preprocess(app):
     logger.info("Preprocessing server set and generating polynomials...")
@@ -15,11 +15,6 @@ async def preprocess(app):
     preprocessed_emails = list(map(preprocess_email, EXAMPLE_EMAILS))
     app.ctx.server_preprocessed = server_perform_preprocess(preprocessed_emails)
     logger.info("Preprocessing complete.")
-
-
-@app.route("/")
-async def index(request):
-    return await file('./dist/index.html')
 
 
 @app.route("/sup")

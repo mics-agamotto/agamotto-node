@@ -1,13 +1,24 @@
 version: "3"
 
 services:
-  agamotto-node:
+  agamotto-py:
     build:
-      context: .
-    container_name: agamotto-node
+      dockerfile: agamotto-py.Dockerfile
+    restart: always
+
+  agamotto-js:
+    build:
+      context: ../jigg
+      dockerfile: agamotto-js.Dockerfile
+    restart: always
+
+  nginx:
+    build:
+      dockerfile: nginx.Dockerfile
     restart: always
     ports:
-      - "8080:443"
+      - 8000:80
     volumes:
+      - ./conf.d/:/etc/nginx/conf.d/
       - ./server.crt:/certs/fullchain.pem
       - ./server.key:/certs/privkey.pem
