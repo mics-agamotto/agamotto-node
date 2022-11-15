@@ -13,12 +13,20 @@ services:
     restart: always
 
   nginx:
+    image: nginx
+    restart: always
+    volumes:
+      - ./conf.d/:/etc/nginx/conf.d/
+      - ./server.crt:/certs/fullchain.pem
+      - ./server.key:/certs/privkey.pem
+  
+  router:
     build:
       dockerfile: nginx.Dockerfile
     restart: always
     ports:
       - 8000:80
     volumes:
-      - ./conf.d/:/etc/nginx/conf.d/
+      - ./router.conf.d/:/etc/nginx/conf.d/
       - ./server.crt:/certs/fullchain.pem
       - ./server.key:/certs/privkey.pem
